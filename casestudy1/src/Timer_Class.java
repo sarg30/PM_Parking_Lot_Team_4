@@ -1,6 +1,5 @@
-import java.util.Date; //importing all the packages required for
+import java.util.Date; //importing all the packages required for timer
 import java.text.ParseException;
-//import java.time.*;
 import java.text.SimpleDateFormat;
 public class Timer_Class {
     public static String Date_Time() // to get instantaneous system date as string
