@@ -25,7 +25,7 @@ public class Timer_Class {
             long Total_Time_mins=Total_Time_hr*60+minutes;
             long Total_Sec=seconds+Total_Time_mins*60;
             
-            return Total_Sec; //returns time in secs 
+            return Total_Sec; //returns time in secs as long data type
         
     }
 }
