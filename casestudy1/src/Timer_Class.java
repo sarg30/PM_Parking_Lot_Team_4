@@ -1,4 +1,4 @@
-import java.util.Date; //importing all the packages required for timer
+import java.util.Date; //importing all the packages required for Timer
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 public class Timer_Class {
@@ -9,7 +9,7 @@ public class Timer_Class {
     return formatter.format(date).trim();//date as string
     }
 
-    public static long tottime(String d1,String d2) throws ParseException // to gives output in seconds
+    public static long tottime(String d1,String d2) throws ParseException // to give output in seconds
     {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy/HH:mm:ss");
             Date startDate = formatter.parse(d1);
