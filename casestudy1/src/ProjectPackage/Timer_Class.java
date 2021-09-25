@@ -1,7 +1,8 @@
+package ProjectPackage;
 import java.util.Date; //importing all the packages required for Timer
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-public class Timer_Class {
+interface Timer_Class {
     public static String Date_Time() // to get instantaneous system date as string
     {
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy/HH:mm:ss");  
