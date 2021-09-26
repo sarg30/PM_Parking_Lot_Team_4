@@ -7,13 +7,6 @@ class Payment implements Timer_Class{
     //private static boolean end_payment=false;
     static Scanner scan=new Scanner (System.in);
 
-    Payment(double charge_per_hour,double init_parking_cost) 
-    //Manager can change the cost of electric charge and initial parking cost using this constructor
-    {
-        Payment.charge_per_hour=charge_per_hour;
-        Payment.init_parking_cost=init_parking_cost;
-    }
-
     //Calling_Payment should be used to excute payment transactions | 1- electric 2- diesel
     public static void Calling_Payment(String date1,String date2,int vehicleType,int FuelType,int PaymentType) throws ParseException {
         long park_duration=Timer_Class.tottime(date1.trim(),date2.trim());
