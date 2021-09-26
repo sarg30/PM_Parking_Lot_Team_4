@@ -1,6 +1,6 @@
 package ProjectPackage;
 import java.util.*;
-class Customer extends Payment {
+public class Customer extends Payment {
     Scanner scan = new Scanner(System.in);
     private String CustomerName ="";
     private int VehicleType=3; //1- handicapped, 2-motor, 3- compact, 4- large
@@ -10,7 +10,7 @@ class Customer extends Payment {
     private int fuelType=2; // 1- electric , 2- diesel
     private int floor_num = 0;
     private int slot_num=0;
-    private float bill = 0;
+   // private float bill = 0;
     private String entryTime="";
     private String exitTime="";
     private boolean parkStatus = false;
@@ -138,6 +138,12 @@ class Customer extends Payment {
     }
     public int getSlot(){ // to get slot number
         return slot_num;
+    }
+    public String getentryTime(){
+        return entryTime;
+    }
+    public String getexitTime(){
+        return exitTime;
     }
     public boolean getparkStatus(){ //returns whether the vehicle is parked or not
        return  parkStatus;
