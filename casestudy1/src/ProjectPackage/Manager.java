@@ -11,7 +11,7 @@ public class Manager {
     int charge3a, charge3b, charge3c; // for Large Vehicles
     // a==> for first hour
     // b==> for second hour
-    // c==> for third hour
+    // c==> for further hours
 
     Scanner sc = new Scanner(System.in);
 
