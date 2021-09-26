@@ -130,6 +130,9 @@ class Customer extends Payment {
     public String getPaymentType_str(){ // returns payment type as a string
         return payTypeStr[PaymentType-1];
     }
+    public double getFastagBalance(){
+        return FastTagBalance;
+    }
     public int getFloor(){ //to get floor number
         return floor_num;
     }
