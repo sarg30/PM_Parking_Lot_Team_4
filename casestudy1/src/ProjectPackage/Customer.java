@@ -104,7 +104,12 @@ class Customer extends Payment {
     public void setparkStatus(boolean status){
         parkStatus=status;
     }
-
+    public void setEntryTime(){
+        entryTime=Timer_Class.Date_Time();
+    }
+    public void setExitTime(){
+        exitTime=Timer_Class.Date_Time();
+    }
     //                -------   **getter methods to access data elements**   -------
 
     public String getCustomerName() {//returns customer name as string
