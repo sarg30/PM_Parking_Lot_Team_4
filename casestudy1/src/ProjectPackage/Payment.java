@@ -1,7 +1,7 @@
 package ProjectPackage;
 import java.text.ParseException;
 import java.util.*;
-class Payment extends Timer_Class{
+class Payment implements Timer_Class{
     private static double charge_per_hour=20.0f; //default cost
     private static double init_parking_cost=20.0f; //default cost
     //private static boolean end_payment=false;
@@ -16,7 +16,7 @@ class Payment extends Timer_Class{
 
     //Calling_Payment should be used to excute payment transactions | 1- electric 2- diesel
     public static void Calling_Payment(String date1,String date2,int vehicleType,int FuelType,int PaymentType) throws ParseException {
-        long park_duration=tottime(date1.trim(),date2.trim());
+        long park_duration=Timer_Class.tottime(date1.trim(),date2.trim());
         Timer_Class.tottime("01-05-2021/12:11:22","01-05-2021/12:11:32");
         if(FuelType==1)electric_fee(park_duration,vehicleType,PaymentType);
         else diesel_fee(park_duration,vehicleType,PaymentType);
