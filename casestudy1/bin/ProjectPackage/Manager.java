@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Manager {
     int NumberOfFloors;
     // int NumberOfPSlots;
-    int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike;
+    int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike; // These will store number of slots per floor 
+    // of that particular type.
+    
     int charge1a, charge1b, charge1c; // for Motorcycles and Handicapped
     int charge2a, charge2b, charge2c; // for Compact Vehicles
     int charge3a, charge3b, charge3c; // for Large Vehicles
@@ -54,7 +56,6 @@ public class Manager {
         charge3b = sc.nextInt();
         charge3c = sc.nextInt();
     }
-
 
 }
 /*Motorcycle (Bike, Scooter)
