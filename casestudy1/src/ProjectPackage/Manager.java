@@ -6,8 +6,7 @@ public class Manager {
     // int NumberOfPSlots;
     int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike; // These will store number of slots per floor 
     // of that particular type.
-    
-     
+   
     static Scanner sc = new Scanner(System.in);
     public static Payment pay=new Payment();
 
@@ -54,8 +53,6 @@ public class Manager {
         System.out.println("Please enter the electricity charge per Hour of usage: ");
         double electricityCharge=sc.nextDouble();
         pay.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
-        
-
     }
 
 }
