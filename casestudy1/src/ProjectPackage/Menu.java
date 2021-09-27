@@ -3,8 +3,8 @@ package ProjectPackage;
 import java.util.Scanner;
 
 public class Menu extends Customer{
-    class parking_Lot{
-        private int no_floors=4; //including ground
+    abstract class parking_Lot{
+        //private int no_floors=4; //including ground
         static boolean[] arrayhandicapped;
         private int handicapped=10;
         static boolean[] arraymotorcycle;
