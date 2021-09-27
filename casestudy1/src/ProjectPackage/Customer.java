@@ -1,6 +1,6 @@
 package ProjectPackage;
 import java.util.*;
-public class Customer extends Payment {
+class Customer {
     Scanner scan = new Scanner(System.in);
     private String CustomerName ="";
     private int VehicleType=3; //1- handicapped, 2-motor, 3- compact, 4- large
@@ -13,6 +13,7 @@ public class Customer extends Payment {
    // private float bill = 0;
     private String entryTime="";
     private String exitTime="";
+    private boolean paystat=false;
     private boolean parkStatus = false;
     String[] vehicle=new String[]{"Handicapped","Motorcycles (Bikes, Scooters etc)","Compact (Cars, Vans, Auto-Rikshaw,etc)","Large (Buses,Trucks, etc)"};
     String[] payTypeStr=new String[]{"cash","card","UPI(G-pay,phonePay,cred...)","Fastag"};
@@ -27,7 +28,7 @@ public class Customer extends Payment {
 
    //  **Basic Customer Details**
 
-    void setCustomername(){ // to set customer name
+    public void setCustomername(){ // to set customer name
         System.out.println("Please enter your Username: ");
         CustomerName=scan.nextLine().trim();
         if(CustomerName==""){
@@ -35,7 +36,7 @@ public class Customer extends Payment {
             setCustomername();;
         }
     }
-    void setVehicleType(){ // to set the vehicle type
+    public void setVehicleType(){ // to set the vehicle type
         System.out.println("1 - Handicapped \n2 - Motorcycles (Bikes, Scooters etc)\n3 - Compact (Cars, Vans, Auto-Rikshaw,etc)\n4 - Large (Buses,Trucks, etc)");
         System.out.println("Enter the respective number corresponding to the Type of Vehicle: ");
         try {
@@ -45,7 +46,7 @@ public class Customer extends Payment {
             setVehicleType();
         }
     }
-    void setFuelType(){ // to set the fuel type
+    public void setFuelType(){ // to set the fuel type
         System.out.println("1 - Electric\n2 - Diesel/Petrol/CNG");
         System.out.println("Enter the respective number corresponding to the fuel type: ");
         try{
@@ -56,7 +57,7 @@ public class Customer extends Payment {
             setFuelType();
         }
     }
-    void setPaymentType(){ // to set payment type
+    public void setPaymentType(){ // to set payment type
         System.out.println("1 - Cash \n2 - Card\n3 - UPI(G-pay,phonePay,cred...)\n4 - Fastag");
         System.out.println("Enter the respective number corresponding to the Payment type: ");
         try{
@@ -68,8 +69,9 @@ public class Customer extends Payment {
         }
         if(PaymentType==4)setFastTagBalance();
     }
-    void setFastTagBalance(){ // to set fastag balance of the customer
+    public void setFastTagBalance(){ // to set fastag balance of the customer
         try{
+            System.out.println("Enter your fastag balance : ");
             FastTagBalance=scan.nextDouble();
         }
         catch (Exception e){
@@ -78,7 +80,8 @@ public class Customer extends Payment {
         }
         
     }
-    void setBalance(){ //to get customer's account balance and set balance
+    public void modifyFastTagBalance(double d){FastTagBalance=d;}
+    public void setBalance(){ //to get customer's account balance and set balance
         try {
             System.out.println("Enter Account Balance : ");
             if(PaymentType==4)System.out.println("Though fastag is chosen, please enter your account balance for alternative payment features.");
@@ -110,6 +113,9 @@ public class Customer extends Payment {
     public void setExitTime(){
         exitTime=Timer_Class.Date_Time();
     }
+    public void setpaystat(boolean b){
+        paystat=b;
+    }
     //                -------   **getter methods to access data elements**   -------
 
     public String getCustomerName() {//returns customer name as string
@@ -123,6 +129,9 @@ public class Customer extends Payment {
     }
     public int getVehicleType() { //returns vehicle type as an integer 1-hanicapped, 2-motorcycles, 3-compact, 4-large
         return VehicleType;
+    }
+    public int getPaymentType(){
+        return PaymentType;
     }
     public String getVehicleType_str(){ // returns vehicle type as a string
         return vehicle[VehicleType-1];
@@ -147,5 +156,8 @@ public class Customer extends Payment {
     }
     public boolean getparkStatus(){ //returns whether the vehicle is parked or not
        return  parkStatus;
+    }
+    public boolean getpaystat(){
+        return paystat;
     }
 }
