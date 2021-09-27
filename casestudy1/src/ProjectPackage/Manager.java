@@ -1,3 +1,4 @@
+package ProjectPackage;
 import java.util.Scanner;
 
 public class Manager {

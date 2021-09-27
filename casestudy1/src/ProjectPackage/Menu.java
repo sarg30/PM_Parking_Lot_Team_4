@@ -11,7 +11,7 @@ public class Menu extends Customer{
 
 
     public static void main(String[] args) {
-        Scanner in=Scanner(System.in);
+        Scanner in=new Scanner(System.in);
         Menu obj= new Menu();
         obj.Greetings();
 
