@@ -1,21 +1,15 @@
 package ProjectPackage;
 import java.util.Scanner;
-
+import ProjectPackage.*;
 public class Manager {
     int NumberOfFloors;
     // int NumberOfPSlots;
     int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike; // These will store number of slots per floor 
     // of that particular type.
     
-    double charge1a; // for Handicapped
-    double charge2a; // for motorcycles
-    double charge3a; // for compact Vehicles
-    double charge4a; //for large
-    // a==> for first hour
-    // b==> for second hour
-    // c==> for further hours
-    public static Payment payment=new Payment(); 
-    Scanner sc = new Scanner(System.in);
+     
+    static Scanner sc = new Scanner(System.in);
+    public static Payment pay=new Payment();
 
     public void SetFoorsAndSlotQuantity() 
     {
@@ -37,7 +31,14 @@ public class Manager {
         shandicapped = sc.nextInt();
     }
 
-    public void SetCharges() {
+    public  static void SetCharges() {
+        double charge1a; // for Handicapped
+        double charge2a; // for motorcycles
+        double charge3a; // for compact Vehicles
+        double charge4a; //for large
+        // a==> for first hour
+        // b==> for second hour
+        // c==> for further hours
         System.out.println("Please enter the Charges for Parking Vehicles for the Handicapped: ");
         charge1a = sc.nextDouble();
 
@@ -52,7 +53,7 @@ public class Manager {
 
         System.out.println("Please enter the electricity charge per Hour of usage: ");
         double electricityCharge=sc.nextDouble();
-        payment.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
+        pay.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
         
 
     }
