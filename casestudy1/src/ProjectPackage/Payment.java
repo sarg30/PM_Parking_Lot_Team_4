@@ -24,7 +24,7 @@ class Payment implements Timer_Class {
         CompactFee=20.0f; 
         LargeFee=20.0f;
         electricFee=10.0f;
-        System.out.println("The charges per hour are set to default: ");
+        System.out.println("The default charges per hour : ");
         System.out.println("Handicapped Vehicle Fee=20.0\nMotorcycle Fee=20.0\nCompactVehicle Fee=20.0\nLarge Vehicle Fee=20.0\nelectricity charges=10.0f");
     }
 
