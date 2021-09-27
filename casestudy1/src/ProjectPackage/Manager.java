@@ -13,6 +13,8 @@ public class Manager {
     // b==> for second hour
     // c==> for further hours
 
+    double chargeElectric;
+
     Scanner sc = new Scanner(System.in);
 
     public void GetFoorsAndSlotQuantity() 
@@ -42,19 +44,22 @@ public class Manager {
 
     public void GetCharges() {
         System.out.println("Please enter the Charge for Parking Mortorcycles and Handicapped");
-        charge1a = sc.nextInt();
+        charge1a = sc.nextDouble();
         charge1b = charge1a/2;
         charge1c = charge1b/2;
 
         System.out.println("Please enter the Charge for Compact Vehicles");
-        charge2a = sc.nextInt();
+        charge2a = sc.nextDouble();
         charge2b = charge2a/2;
         charge2c = charge2b/2;
 
         System.out.println("Please enter the Charge for Parking Mortorcycles and Handicapped");
-        charge3a = sc.nextInt();
+        charge3a = sc.nextDouble();
         charge3b = charge3a/2;
         charge3c = charge3b/2;
+
+        System.out.println("Please enter the Charge per hour for Charging");
+        chargeElectric = sc.nextDouble();
     }
 
 }
