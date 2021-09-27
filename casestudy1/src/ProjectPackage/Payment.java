@@ -29,7 +29,7 @@ class Payment implements Timer_Class {
     }
 
     //Calling_Payment should be used to excute payment transactions | 1- electric 2- diesel
-    public static void Calling_Payment(Customer c) throws ParseException {
+    public void Calling_Payment(Customer c) throws ParseException {
         long park_duration=Timer_Class.tottime(c.getentryTime().trim(),c.getexitTime().trim());
         Timer_Class.tottime("01-05-2021/12:11:22","01-05-2021/12:11:32");
         if(c.getFuelType()==1)electric_fee(park_duration,c);
