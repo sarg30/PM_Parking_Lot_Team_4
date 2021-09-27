@@ -1,22 +1,17 @@
 package ProjectPackage;
 import java.util.Scanner;
-
+import ProjectPackage.*;
 public class Manager {
     int NumberOfFloors;
     // int NumberOfPSlots;
     int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike; // These will store number of slots per floor 
     // of that particular type.
     
-    int charge1a, charge1b, charge1c; // for Motorcycles and Handicapped
-    int charge2a, charge2b, charge2c; // for Compact Vehicles
-    int charge3a, charge3b, charge3c; // for Large Vehicles
-    // a==> for first hour
-    // b==> for second hour
-    // c==> for further hours
+     
+    static Scanner sc = new Scanner(System.in);
+    public static Payment pay=new Payment();
 
-    Scanner sc = new Scanner(System.in);
-
-    public void GetFoorsAndSlotQuantity() 
+    public void SetFoorsAndSlotQuantity() 
     {
         System.out.println("Please enter the number of Floors");
         NumberOfFloors = sc.nextInt();
@@ -34,28 +29,33 @@ public class Manager {
         svan = sc.nextInt();
         System.out.println("Please enter the number of Parking Slots for Handicapped");
         shandicapped = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Electric car");
-        sElectricCar = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Electric Bike");
-        sElectricBike = sc.nextInt();
-
     }
 
-    public void GetCharges() {
-        System.out.println("Please enter the Charges for Parking Mortorcycles and Handicapped");
-        charge1a = sc.nextInt();
-        charge1b = sc.nextInt();
-        charge1c = sc.nextInt();
+    public  static void SetCharges() {
+        double charge1a; // for Handicapped
+        double charge2a; // for motorcycles
+        double charge3a; // for compact Vehicles
+        double charge4a; //for large
+        // a==> for first hour
+        // b==> for second hour
+        // c==> for further hours
+        System.out.println("Please enter the Charges for Parking Vehicles for the Handicapped: ");
+        charge1a = sc.nextDouble();
 
-        System.out.println("Please enter the Charges for Compact Vehicles");
-        charge2a = sc.nextInt();
-        charge2b = sc.nextInt();
-        charge2c = sc.nextInt();
+        System.out.println("Please enter the Charges for Parking Mortorcycles: ");
+        charge2a = sc.nextDouble();
 
-        System.out.println("Please enter the Charges for Parking Mortorcycles and Handicapped");
-        charge3a = sc.nextInt();
-        charge3b = sc.nextInt();
-        charge3c = sc.nextInt();
+        System.out.println("Please enter the Charges for Parking Compact Vehicles: ");
+        charge3a = sc.nextDouble();
+
+        System.out.println("Please enter the Charges for Parking Large Vehicles: ");
+        charge4a = sc.nextDouble();
+
+        System.out.println("Please enter the electricity charge per Hour of usage: ");
+        double electricityCharge=sc.nextDouble();
+        pay.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
+        
+
     }
 
 }
