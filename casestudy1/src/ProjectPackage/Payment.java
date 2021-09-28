@@ -46,7 +46,7 @@ class Payment implements Timer_Class {
             System.out.println("Which gate you want to exit: 1. North 2. South");
             int n;
             try {
-               n=scan.nextInt();
+               n=scan.nextInt();scan.nextLine();
                if(n==1){
                 System.out.println("Paying at the North exit : ");
                }

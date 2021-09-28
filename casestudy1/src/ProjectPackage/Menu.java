@@ -5,7 +5,7 @@ public class Menu extends Customer implements Parking_Slot {
     public static Payment payment=new Payment();
     static ArrayList<Customer> customerList = new ArrayList<>();
     static Slots[] floors;
-    public static void MenuInit (){
+    public static void MenuInit (){ //method to initialize elements of array floor
         floors=new Slots[obj.NumberOfFloors];
         for(int i=0;i<obj.NumberOfFloors;i++){
         floors[i]=new Slots();
@@ -14,7 +14,7 @@ public class Menu extends Customer implements Parking_Slot {
     }
     static Scanner scan=new Scanner(System.in);
 
-    public static void showMenu(){
+    public static void showMenu(){ //memu to display various options
         System.out.println("Please choose number corresponding to the task to be performed: ");
         System.out.println("1. New Customer  2. an existing customer 3. Exit program");
         int input=scan.nextInt();
@@ -52,9 +52,12 @@ public class Menu extends Customer implements Parking_Slot {
 
     public static void showFunction(int i) {
         
-        if(customerList.get(i).getparkStatus()==true){
+        if(customerList.get(i).getparkStatus()==true){ //assuming customer wants to exit if he is an existing customer
             customerList.get(i).setExitTime();
-            System.out.println("Payment Process........");
+            System.out.println(" Want to pay to the attendent : 1. yes  2. no");
+            int a=scan.nextInt();scan.nextLine();
+            if(a==1)System.out.println("Paying to the attendent");
+            else System.out.println("Paying is automated. ");
             try {
                 payment.Calling_Payment(customerList.get(i));
                 if(customerList.get(i).getparkStatus()==false){
@@ -68,6 +71,11 @@ public class Menu extends Customer implements Parking_Slot {
             showMenu();
         }
         else {
+            System.out.println("Choose the gate of entry: 1. East or 2. West ");
+            if(scan.nextInt()==2){
+                System.out.println("You are entering West gate. Parking Allotment is being processed");
+            }
+            else System.out.println("You are entering East  gate. Parking Allotment is being processed");
             System.out.println("Choose the number corresponding to the function you want to perform: ");
             System.out.println("Display Vacancies and set parking");
             choosefloorslot(i);
@@ -119,6 +127,10 @@ public class Menu extends Customer implements Parking_Slot {
         System.out.println("Total floors including ground: "+obj.NumberOfFloors);
         System.out.println("choose from 0 to "+((obj.NumberOfFloors)-1));
         floor=scan.nextInt();
+        if(CheckFilled(i)==true){
+            System.out.println("All slots are filled!!! Sorry for Inconvinience caused. Visit us Next Time.");
+            showMenu();
+        }
         if(floor>=obj.NumberOfFloors){
             System.out.println("exceeded max floor count. so, floor will be set to "+((obj.NumberOfFloors)-1));
             floor=((obj.NumberOfFloors)-1);
@@ -161,5 +173,59 @@ public class Menu extends Customer implements Parking_Slot {
                 floors[f].removelar(s);
             }
         }
+    }
+
+    static boolean CheckFilled(int i){
+        int fuel=customerList.get(i).getFuelType();
+        int v=customerList.get(i).getVehicleType();
+        boolean val=false;int sum=0;
+        if(fuel==1){
+            if(v==1){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    System.out.println("Floor Number: "+f);
+                    sum+=floors[f].cehandi();
+                }
+            }
+            else if(v==2){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    System.out.println("Floor Number: "+f);
+                    sum+=floors[f].cemotor();
+                }
+            }
+            else if(v==3){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].cecom();System.out.println("Floor Number: "+f);
+                }
+            }
+            else {
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].celar();System.out.println("Floor Number: "+f);
+                }
+            }
+        }
+        else {
+            if(v==1){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].chandi();System.out.println("Floor Number: "+f);
+                }
+            }
+            else if(v==2){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].cmotor();System.out.println("Floor Number: "+f);
+                } 
+            }
+            else if(v==3){
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].ccom();System.out.println("Floor Number: "+f);
+                }
+            }
+            else {
+                for(int f=0;f<obj.NumberOfFloors;f++){
+                    sum+=floors[f].clar();System.out.println("Floor Number: "+f);
+                }
+            }
+        }
+        if(sum==obj.NumberOfFloors)val=true;
+        return val;
     }
 }

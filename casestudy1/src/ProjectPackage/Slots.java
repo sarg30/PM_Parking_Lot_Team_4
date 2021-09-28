@@ -9,7 +9,7 @@ class Slots implements Parking_Slot{
     int[] ec=new int[obj.selectriccompact];
     int[] el=new int[obj.selectriclarge];
 
-    void InitSlots(){
+    void InitSlots(){ // to initialize each slot object created
         for(int i=0;i<hc.length;i++)hc[i]=0;
         for(int i=0;i<m.length;i++)m[i]=0;
         for(int i=0;i<c.length;i++)c[i]=0;
@@ -19,6 +19,8 @@ class Slots implements Parking_Slot{
         for(int i=0;i<ec.length;i++)ec[i]=0;
         for(int i=0;i<el.length;i++)el[i]=0;
     }
+
+    // to check and allot slots in each floor
 
     public int handi(){
         for(int i=0;i<hc.length;i++){
@@ -121,8 +123,112 @@ class Slots implements Parking_Slot{
         el[slot-1]=0;
     }
 
-    //--------------------------------------
+    //-------------------------------------- // to check filled or not 
 
-
+    public int chandi(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<hc.length;i++){
+            sum+=hc[i];
+            if(hc[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*hc.length))b=1;
+        if(b==1){System.out.print("None");}
+        System.out.println();
+        return b;
+    }
+    public int cmotor(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<c.length;i++){
+            sum+=c[i];
+            if(c[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*c.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int ccom(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<c.length;i++){
+            sum+=c[i];
+            if(c[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*c.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int clar(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<l.length;i++){
+            sum+=l[i];
+            if(l[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*l.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int cehandi(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<ehc.length;i++){
+            sum+=ehc[i];
+            if(ehc[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*ehc.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int cemotor(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<em.length;i++){
+            sum+=em[i];
+            if(em[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*em.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int cecom(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<ec.length;i++){
+            sum+=ec[i];
+            if(ec[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*ec.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
+    public int celar(){
+        int sum=0;int b=0;
+        System.out.print("Emplty slots are : ");
+        for(int i=0;i<el.length;i++){
+            sum+=el[i];
+            if(el[i]==0){
+                System.out.print(" "+i+1);
+            }
+        }
+        if(sum==(1*el.length))b=1;
+        if(b==1){System.out.print("None");}System.out.println();
+        return b;
+    }
 
 }
