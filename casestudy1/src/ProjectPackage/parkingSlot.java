@@ -4,7 +4,6 @@ import java.util.*;
 interface Parking_Slot {
     Manager obj=new Manager();
 }
-
 public class parkingSlot implements Parking_Slot {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);

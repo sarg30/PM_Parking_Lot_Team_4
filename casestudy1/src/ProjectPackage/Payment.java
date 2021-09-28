@@ -41,7 +41,7 @@ class Payment implements Timer_Class {
         System.out.println("The Billing Process has Begun...");
         System.out.println("Where do You want to pay 1. at the exit or 2. at the customer dash :");
         String where=scan.nextLine().trim();
-        if(where.compareTo("2")==2)System.out.println("Paying at the customer dash...");
+        if(where.compareTo("2")==0)System.out.println("Paying at the customer dash...");
         else System.out.println("Paying at the exit : ");
 
     }

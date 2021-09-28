@@ -64,11 +64,11 @@ public class Menu extends Customer implements Parking_Slot {
                 System.out.println("Exception menu-showfunction");
                 showMenu();
             }
+            showMenu();
         }
         else {
             System.out.println("Choose the number corresponding to the function you want to perform: ");
             System.out.println("Display Vacancies and set parking");
-            //displayVacantfloor(i);
             choosefloorslot(i);
             showMenu();
         }
@@ -120,6 +120,7 @@ public class Menu extends Customer implements Parking_Slot {
         floor=scan.nextInt();
         if(floor>=obj.NumberOfFloors){
             System.out.println("exceeded max floor count. so, floor will be set to "+((obj.NumberOfFloors)-1));
+            floor=((obj.NumberOfFloors)-1);
         }
         System.out.println("chosen floor: "+floor);
         Vacantfloor(i,floor);
@@ -127,7 +128,7 @@ public class Menu extends Customer implements Parking_Slot {
         customerList.get(i).setparkStatus(true);
         System.out.println("Parking done");
         customerList.get(i).setEntryTime();
-        showMenu();
+        //showMenu();
     }
 
     public static void vacatingslots(int fuel,int vehicle,int f,int s){
