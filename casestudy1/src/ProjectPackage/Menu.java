@@ -27,7 +27,7 @@ public class Menu extends Customer implements Parking_Slot {
     public static void NewCustomer(){
         Customer customer = new Customer();
         customerList.add(customer);
-        showFunction(customerList.size());
+        showFunction(customerList.size()-1);
     }
 
     public static void ExistingCustomer(){
