@@ -4,8 +4,9 @@ import java.util.*;
 public class Menu extends Customer implements Parking_Slot {
     public static Payment payment=new Payment();
     static ArrayList<Customer> customerList = new ArrayList<>();
-    static Slots[] floors=new Slots[obj.NumberOfFloors];
-    Menu(){
+    static Slots[] floors;
+    public static void MenuInit (){
+        floors=new Slots[obj.NumberOfFloors];
         for(int i=0;i<obj.NumberOfFloors;i++){
         floors[i]=new Slots();
         }
@@ -113,13 +114,14 @@ public class Menu extends Customer implements Parking_Slot {
     }
 
     public static void choosefloorslot(int i){
-        int floor=0,slotnum=0;
+        int floor=0;
         System.out.println("Total floors including ground: "+obj.NumberOfFloors);
         System.out.println("choose from 0 to "+((obj.NumberOfFloors)-1));
         floor=scan.nextInt();
         if(floor>=obj.NumberOfFloors){
             System.out.println("exceeded max floor count. so, floor will be set to "+((obj.NumberOfFloors)-1));
         }
+        System.out.println("chosen floor: "+floor);
         Vacantfloor(i,floor);
         customerList.get(i).setFloor(floor);
         System.out.println("Parking done");

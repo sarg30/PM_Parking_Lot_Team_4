@@ -1,16 +1,24 @@
 package ProjectPackage;
-import java.util.*;
 class Slots implements Parking_Slot{
-    static int[] hc=new int[obj.shandicapped];
-    static int[] m=new int[obj.smotor];
-    static int[] c=new int[obj.scompact];
-    static int[] l=new int[obj.slarge];
-    static int[] ehc=new int[obj.sElectrichandi];
-    static int[] em=new int[obj.sElectricmotor];
-    static int[] ec=new int[obj.selectriccompact];
-    static int[] el=new int[obj.selectriclarge];
+    int[] hc=new int[obj.shandicapped];
+    int[] m=new int[obj.smotor];
+    int[] c=new int[obj.scompact];
+    int[] l=new int[obj.slarge];
+    int[] ehc=new int[obj.sElectrichandi];
+    int[] em=new int[obj.sElectricmotor];
+    int[] ec=new int[obj.selectriccompact];
+    int[] el=new int[obj.selectriclarge];
 
-    static Scanner scan=new Scanner(System.in);
+    Slots(){
+        for(int i=0;i<hc.length;i++)hc[i]=0;
+        for(int i=0;i<m.length;i++)m[i]=0;
+        for(int i=0;i<c.length;i++)c[i]=0;
+        for(int i=0;i<l.length;i++)l[i]=0;
+        for(int i=0;i<ehc.length;i++)ehc[i]=0;
+        for(int i=0;i<em.length;i++)em[i]=0;
+        for(int i=0;i<ec.length;i++)ec[i]=0;
+        for(int i=0;i<el.length;i++)el[i]=0;
+    }
 
     public int handi(){
         for(int i=0;i<hc.length;i++){
