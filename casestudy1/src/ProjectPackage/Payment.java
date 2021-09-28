@@ -25,7 +25,7 @@ class Payment implements Timer_Class {
         LargeFee=20.0f;
         electricFee=10.0f;
         System.out.println("The default charges per hour : ");
-        System.out.println("Handicapped Vehicle Fee=20.0\nMotorcycle Fee=20.0\nCompactVehicle Fee=20.0\nLarge Vehicle Fee=20.0\nelectricity charges=10.0f");
+        System.out.println("Handicapped Vehicle Fee=20.0 Motorcycle Fee=20.0 CompactVehicle Fee=20.0 Large Vehicle Fee=20.0 electricity charges=10.0");
     }
 
     //Calling_Payment should be used to excute payment transactions | 1- electric 2- diesel
@@ -39,6 +39,11 @@ class Payment implements Timer_Class {
     static void billing_notification()
     {
         System.out.println("The Billing Process has Begun...");
+        System.out.println("Where do You want to pay 1. at the exit or 2. at the customer dash :");
+        String where=scan.nextLine().trim();
+        if(where.compareTo("2")==2)System.out.println("Paying at the customer dash...");
+        else System.out.println("Paying at the exit : ");
+
     }
     //for electric vehicles
     static void electric_fee(long park_duration,Customer c) throws ParseException{

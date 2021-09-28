@@ -1,36 +1,38 @@
 package ProjectPackage;
 import java.util.Scanner;
-import ProjectPackage.*;
-public class Manager {
-    int NumberOfFloors;
+class Manager {
+    static int NumberOfFloors=3;
     // int NumberOfPSlots;
-    int sbike,struck,sscoter,sbus,svan,shandicapped,sElectricCar,sElectricBike; // These will store number of slots per floor 
+    static int smotor=4,slarge=4,scompact=4,shandicapped=4,sElectrichandi=4,sElectricmotor=4,selectriccompact=4,selectriclarge=4; // These will store number of slots per floor 
     // of that particular type.
    
     static Scanner sc = new Scanner(System.in);
-    public static Payment pay=new Payment();
 
-    public void SetFoorsAndSlotQuantity() 
+    static void SetFoorsAndSlotQuantity() 
     {
         System.out.println("Please enter the number of Floors");
         NumberOfFloors = sc.nextInt();
         System.out.println("Information of Slots per floor");
-
-        System.out.println("Please enter the number of Parking Slots for Bike");
-        sbike = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Truck");
-        struck = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Scoter");
-        sscoter = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Bus");
-        sbus = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for Van");
-        svan = sc.nextInt();
         System.out.println("Please enter the number of Parking Slots for Handicapped");
         shandicapped = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for motorvehicles");
+        smotor = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for compact");
+        scompact = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for large vehicles");
+        slarge = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for electricbhandicapped vehicles");
+        sElectrichandi = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for electric motorvehicles");
+        sElectricmotor = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for electric compact vehicles");
+        selectriccompact = sc.nextInt();
+        System.out.println("Please enter the number of Parking Slots for electric large vehicles");
+        selectriclarge = sc.nextInt();
+        
     }
 
-    public  static void SetCharges() {
+    public static void SetCharges(Payment payment) {
         double charge1a; // for Handicapped
         double charge2a; // for motorcycles
         double charge3a; // for compact Vehicles
@@ -52,7 +54,7 @@ public class Manager {
 
         System.out.println("Please enter the electricity charge per Hour of usage: ");
         double electricityCharge=sc.nextDouble();
-        pay.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
+        payment.settingFee(charge1a,charge2a,charge3a,charge4a,electricityCharge);
     }
 
 }
