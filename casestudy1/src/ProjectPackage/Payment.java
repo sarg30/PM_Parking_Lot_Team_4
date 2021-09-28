@@ -96,7 +96,8 @@ class Payment implements Timer_Class {
             park_duration--;
         }
         cost+=park_duration*baseRate;
-        System.out.println("Parking Cost: "+cost);
+        System.out.println("1 sec real time = 1 hr in the program - adjusted to perform actions faster");
+        System.out.println("Parking duration: "+park_duration+"    Parking Cost: "+cost);
         return cost;
     }
     static void Bill_Display(double total_cost,Customer c){ //displaying bill based on different payment methods
