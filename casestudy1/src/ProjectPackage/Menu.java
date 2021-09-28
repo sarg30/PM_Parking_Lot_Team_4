@@ -9,6 +9,7 @@ public class Menu extends Customer implements Parking_Slot {
         floors=new Slots[obj.NumberOfFloors];
         for(int i=0;i<obj.NumberOfFloors;i++){
         floors[i]=new Slots();
+        floors[i].InitSlots();
         }
     }
     static Scanner scan=new Scanner(System.in);

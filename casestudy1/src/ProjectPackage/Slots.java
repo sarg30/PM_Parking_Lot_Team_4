@@ -1,15 +1,15 @@
 package ProjectPackage;
 class Slots implements Parking_Slot{
-    int[] hc=new int[obj.shandicapped];
+    static int[] hc=new int[obj.shandicapped];
     int[] m=new int[obj.smotor];
     int[] c=new int[obj.scompact];
     int[] l=new int[obj.slarge];
-    int[] ehc=new int[obj.sElectrichandi];
+    static int[] ehc=new int[obj.sElectrichandi];
     int[] em=new int[obj.sElectricmotor];
     int[] ec=new int[obj.selectriccompact];
     int[] el=new int[obj.selectriclarge];
 
-    Slots(){
+    void InitSlots(){
         for(int i=0;i<hc.length;i++)hc[i]=0;
         for(int i=0;i<m.length;i++)m[i]=0;
         for(int i=0;i<c.length;i++)c[i]=0;
@@ -22,7 +22,7 @@ class Slots implements Parking_Slot{
 
     public int handi(){
         for(int i=0;i<hc.length;i++){
-            if(i==0){
+            if(hc[i]==0){
                 hc[i]=1;
                 return i+1;
             }  
@@ -31,7 +31,7 @@ class Slots implements Parking_Slot{
     }
     public int motor(){
         for(int i=0;i<m.length;i++){
-            if(i==0){
+            if(m[i]==0){
                 m[i]=1;
                 return i+1;
             }  
@@ -40,7 +40,7 @@ class Slots implements Parking_Slot{
     }
     public int com(){
         for(int i=0;i<c.length;i++){
-            if(i==0){
+            if(c[i]==0){
                 c[i]=1;
                 return i+1;
             }  
@@ -49,7 +49,7 @@ class Slots implements Parking_Slot{
     }
     public int lar(){
         for(int i=0;i<l.length;i++){
-            if(i==0){
+            if(l[i]==0){
                 l[i]=1;
                 return i+1;
             }  
@@ -57,8 +57,9 @@ class Slots implements Parking_Slot{
         return -1;
     }
     public int ehandi(){
+        
         for(int i=0;i<ehc.length;i++){
-            if(i==0){
+            if(ehc[i]==0){
                 ehc[i]=1;
                 return i+1;
             }  
@@ -67,7 +68,7 @@ class Slots implements Parking_Slot{
     }
     public int emotor(){
         for(int i=0;i<em.length;i++){
-            if(i==0){
+            if(em[i]==0){
                 em[i]=1;
                 return i+1;
             }  
@@ -76,7 +77,7 @@ class Slots implements Parking_Slot{
     }
     public int ecom(){
         for(int i=0;i<ec.length;i++){
-            if(i==0){
+            if(ec[i]==0){
                 ec[i]=1;
                 return i+1;
             }  
@@ -85,7 +86,7 @@ class Slots implements Parking_Slot{
     }
     public int elar(){
         for(int i=0;i<el.length;i++){
-            if(i==0){
+            if(el[i]==0){
                 el[i]=1;
                 return i+1;
             }  

@@ -36,13 +36,26 @@ class Payment implements Timer_Class {
         else diesel_fee(park_duration,c);
 
     }
-    static void billing_notification()
+    static void billing_notification() // to notify billing has started and to input which gate customer has to exit
     {
         System.out.println("The Billing Process has Begun...");
         System.out.println("Where do You want to pay 1. at the exit or 2. at the customer dash :");
         String where=scan.nextLine().trim();
         if(where.compareTo("2")==0)System.out.println("Paying at the customer dash...");
-        else System.out.println("Paying at the exit : ");
+        else {
+            System.out.println("Which gate you want to exit: 1. North 2. South");
+            int n;
+            try {
+               n=scan.nextInt();
+               if(n==1){
+                System.out.println("Paying at the North exit : ");
+               }
+               else System.out.println("Paying at the South exit : ");
+            } catch (Exception e) {
+                System.out.println("Invalid Input");
+                billing_notification();
+            }
+        }
 
     }
     //for electric vehicles
@@ -86,7 +99,7 @@ class Payment implements Timer_Class {
         System.out.println("Parking Cost: "+cost);
         return cost;
     }
-    static void Bill_Display(double total_cost,Customer c){
+    static void Bill_Display(double total_cost,Customer c){ //displaying bill based on different payment methods
         System.out.printf("Your total parking cost: "+total_cost+"\n");
         if(c.getPaymentType()==1||c.getPaymentType()==2||c.getPaymentType()==3){
             if(c.getBalance()<total_cost){
