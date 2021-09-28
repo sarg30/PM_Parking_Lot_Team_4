@@ -33,7 +33,7 @@ public class Menu extends Customer implements Parking_Slot {
 
     public static void ExistingCustomer(){
         System.out.println("Enter Username");
-        String name = scan.next();
+        String name = scan.next().trim();
         int i;
         for (i = 0; i <customerList.size(); i++) {
             if (name.equals(customerList.get(i).getCustomerName())) {
@@ -124,6 +124,7 @@ public class Menu extends Customer implements Parking_Slot {
         System.out.println("chosen floor: "+floor);
         Vacantfloor(i,floor);
         customerList.get(i).setFloor(floor);
+        customerList.get(i).setparkStatus(true);
         System.out.println("Parking done");
         customerList.get(i).setEntryTime();
         showMenu();
