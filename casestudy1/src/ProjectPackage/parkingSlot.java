@@ -1,10 +1,10 @@
 package ProjectPackage;
-import java.lang.reflect.Array;
+//import java.lang.reflect.Array;
 import java.util.*;
-interface ParkingSlot {
+interface Parking_Slot {
     Manager obj=new Manager();
 }
-class Slots{
+/**class Slots{
 class Motorcycle extends Customer implements ParkingSlot{
     static int motSpots=obj.smotor;
     public static String startTime[]=new String[motSpots];
@@ -17,7 +17,7 @@ class Motorcycle extends Customer implements ParkingSlot{
         Arrays.fill(username,"");
     }
 
-    public int findSpot(String name){
+    public static int findSpot(String name){
         for(int i=0;i<motSpots;i++){
             if(occupied[i]==false){
                 username[i]=name;
@@ -29,7 +29,7 @@ class Motorcycle extends Customer implements ParkingSlot{
         return -1;
     }
 
-    public int vacateSpot(String name){
+    public static int vacateSpot(String name){
         for(int i=0;i<motSpots;i++){
             if(username[i]==name){
                 username[i]="";
@@ -54,7 +54,7 @@ class Compact extends Customer implements ParkingSlot{
         Arrays.fill(username,"");
     }
 
-    public int findSpot(String name){
+    public static int findSpot(String name){
         for(int i=0;i<compSpots;i++){
             if(occupied[i]==false){
                 username[i]=name;
@@ -66,7 +66,7 @@ class Compact extends Customer implements ParkingSlot{
         return -1;
     }
 
-    public int vacateSpot(String name){
+    public static int vacateSpot(String name){
         for(int i=0;i<compSpots;i++){
             if(username[i]==name){
                 username[i]="";
@@ -91,7 +91,7 @@ class Large extends Customer implements ParkingSlot{
         Arrays.fill(username,"");
     }
 
-    public int findSpot(String name){
+    public static int findSpot(String name){
         for(int i=0;i<largeSlots;i++){
             if(occupied[i]==false){
                 username[i]=name;
@@ -103,7 +103,7 @@ class Large extends Customer implements ParkingSlot{
         return -1;
     }
 
-    public int vacateSpot(String name){
+    public static int vacateSpot(String name){
         for(int i=0;i<largeSlots;i++){
             if(username[i]==name){
                 username[i]="";
@@ -227,12 +227,12 @@ class ElectricBike extends Customer implements ParkingSlot{
     }
 
 }
-}
-public class parkingSlot extends Menu implements ParkingSlot {
+}*/
+public class parkingSlot implements Parking_Slot {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
         System.out.println("Welcome to the Parking Slot ");
-        System.out.println("choose the number corresponding to tasks. \n 1 - Manager \n 2 - Customer\n exit program");
+        System.out.println("choose the number corresponding to tasks. \n 1 - Manager \n 2 - Customer\n 3 - exit program");
         int choice=scan.nextInt();
         if(choice==1){
             System.out.println("you chose manager functionalities. You can now configure the parking lot");
@@ -244,16 +244,16 @@ public class parkingSlot extends Menu implements ParkingSlot {
             else if(num==2){
                 obj.SetCharges(Menu.payment);
             }
-            showMenu();
+            Menu.showMenu();
         }
         else if(choice==2){
             System.out.println("Hello customer!!!");
-            showMenu();
+            Menu.showMenu();
         }
         else {
             System.out.println("Confirm termination : y/n");
             if(scan.next().trim()=="y")System.exit(0);
-            else showMenu();
+            else Menu.showMenu();
         }
         scan.close();
     }

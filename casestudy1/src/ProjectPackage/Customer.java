@@ -43,7 +43,9 @@ class Customer {
             VehicleType=scan.nextInt();
         } catch (Exception e) {
             System.out.println("Enter only an integer value from 1 to 4 from the given options.");
-            setVehicleType();
+            System.out.println("1. show menu 2. setvehicle again");
+            if(scan.nextInt()==2)setVehicleType();
+            else Menu.showMenu();
         }
     }
     public void setFuelType(){ // to set the fuel type
