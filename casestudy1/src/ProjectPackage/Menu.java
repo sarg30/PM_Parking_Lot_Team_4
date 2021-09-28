@@ -126,7 +126,6 @@ public class Menu extends Customer implements Parking_Slot {
         int floor=0;
         System.out.println("Total floors including ground: "+obj.NumberOfFloors);
         System.out.println("choose from 0 to "+((obj.NumberOfFloors)-1));
-        floor=scan.nextInt();
         if(CheckFilled(i)==true){
             System.out.println("All slots are filled!!! Sorry for Inconvinience caused. Visit us Next Time.");
             showMenu();
@@ -135,6 +134,7 @@ public class Menu extends Customer implements Parking_Slot {
             System.out.println("exceeded max floor count. so, floor will be set to "+((obj.NumberOfFloors)-1));
             floor=((obj.NumberOfFloors)-1);
         }
+        floor=scan.nextInt();
         System.out.println("chosen floor: "+floor);
         Vacantfloor(i,floor);
         customerList.get(i).setFloor(floor);

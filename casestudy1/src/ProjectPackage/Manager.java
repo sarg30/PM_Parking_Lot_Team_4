@@ -1,5 +1,10 @@
 package ProjectPackage;
 import java.util.Scanner;
+interface Parking_Slot {
+    Manager obj=new Manager(); 
+    //manager object - this is necessary to access the modified values of prices and slot numbers
+    // without this object only default values can be accessed
+}
 class Manager {
     static int NumberOfFloors=3;
     // int NumberOfPSlots;

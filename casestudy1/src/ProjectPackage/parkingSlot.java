@@ -2,12 +2,7 @@ package ProjectPackage;
 //import java.lang.reflect.Array;
 import java.util.*;
 
-interface Parking_Slot {
-    Manager obj=new Manager(); 
-    //manager object - this is necessary to access the modified values of prices and slot numbers
-    // without this object only default values can be accessed
-}
-public class parkingSlot implements Parking_Slot {
+public class parkingSlot extends Menu {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
         System.out.println("Welcome to the Parking Slot ");
@@ -40,8 +35,9 @@ public class parkingSlot implements Parking_Slot {
             Menu.showMenu();
         }
         else {
-            System.out.println("Confirm termination : y/n");
-            if(scan.next().trim()=="y")System.exit(0);
+            System.out.println("Confirm termination : 1. yes 2. no");
+            int n=scan.nextInt();scan.nextLine();
+            if(n==1)System.exit(0);
             else Menu.showMenu();
         }
         scan.close();

@@ -131,7 +131,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<hc.length;i++){
             sum+=hc[i];
             if(hc[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*hc.length))b=1;
@@ -145,7 +145,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<c.length;i++){
             sum+=c[i];
             if(c[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*c.length))b=1;
@@ -158,7 +158,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<c.length;i++){
             sum+=c[i];
             if(c[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*c.length))b=1;
@@ -171,7 +171,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<l.length;i++){
             sum+=l[i];
             if(l[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*l.length))b=1;
@@ -184,7 +184,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<ehc.length;i++){
             sum+=ehc[i];
             if(ehc[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*ehc.length))b=1;
@@ -197,7 +197,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<em.length;i++){
             sum+=em[i];
             if(em[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*em.length))b=1;
@@ -210,7 +210,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<ec.length;i++){
             sum+=ec[i];
             if(ec[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*ec.length))b=1;
@@ -223,7 +223,7 @@ class Slots implements Parking_Slot{
         for(int i=0;i<el.length;i++){
             sum+=el[i];
             if(el[i]==0){
-                System.out.print(" "+i+1);
+                System.out.print(" "+(i+1));
             }
         }
         if(sum==(1*el.length))b=1;
