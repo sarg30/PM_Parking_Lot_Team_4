@@ -139,6 +139,10 @@ class Customer {
     public String getPaymentType_str(){ // returns payment type as a string
         return payTypeStr[PaymentType-1];
     }
+    public String getFuelTypestr(){
+        if(fuelType==1)return "Electric";
+        else return "Diesel";
+    }
     public double getFastagBalance(){
         return FastTagBalance;
     }
