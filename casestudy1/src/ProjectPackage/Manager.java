@@ -21,7 +21,7 @@ class Manager {
         scompact = sc.nextInt();
         System.out.println("Please enter the number of Parking Slots for large vehicles");
         slarge = sc.nextInt();
-        System.out.println("Please enter the number of Parking Slots for electricbhandicapped vehicles");
+        System.out.println("Please enter the number of Parking Slots for electric handicapped vehicles");
         sElectrichandi = sc.nextInt();
         System.out.println("Please enter the number of Parking Slots for electric motorvehicles");
         sElectricmotor = sc.nextInt();
